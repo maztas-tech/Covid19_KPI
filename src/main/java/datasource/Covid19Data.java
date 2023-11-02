@@ -22,11 +22,17 @@ public class Covid19Data {
 
 
     public String getRegion() {
+
         return region;
     }
 
     public String getAldersgruppe(){
+
         return aldersgruppe;
+    }
+
+    public int getIndlagte() {
+        return indlagte;
     }
 
     @Override

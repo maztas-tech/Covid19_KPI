@@ -1,4 +1,5 @@
 import comparators.AldersGruppeComparator;
+import comparators.IndlagteComparator;
 import comparators.RegionComparator;
 import datasource.Covid19Data;
 import datasource.FileHandler;
@@ -15,21 +16,27 @@ public class Interface {
         int userInput;
         System.out.println("""
                 1: Sort by region
-                2: Sort by age""");
+                2: Sort by age
+                3: Sort by death""");
 
         userInput = input.nextInt();
         switch (userInput){
             case 1:
-                getRegion();
+                regionSort();
                 break;
             case 2:
-                getAlder();
+                alderSort();
                 break;
+            case 3:
+                indlagteSort();
+                break;
+
 
         }
     }
 
-    private void getRegion(){
+
+    private void regionSort(){
         System.out.println("Sorted by region");
         Collections.sort(f.getCovid19DataArrayList(), new RegionComparator());
         for (Covid19Data coviddata: f.getCovid19DataArrayList()) {
@@ -37,7 +44,7 @@ public class Interface {
         }
     }
 
-    private void getAlder(){
+    private void alderSort(){
         System.out.println("Sorted by age");
         Collections.sort(f.getCovid19DataArrayList(), new AldersGruppeComparator());
 
@@ -45,6 +52,17 @@ public class Interface {
             System.out.println(coviddata);
         }
     }
+
+    private void indlagteSort(){
+        System.out.println("Sorted by age: ");
+        Collections.sort(f.getCovid19DataArrayList(), new IndlagteComparator());
+
+        for (Covid19Data coviddata: f.getCovid19DataArrayList()) {
+            System.out.println(coviddata);
+        }
+    }
+
+
 
 
 }
