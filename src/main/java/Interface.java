@@ -14,25 +14,29 @@ public class Interface {
         f.fileHandler();
         Scanner input = new Scanner(System.in);
         int userInput;
-        System.out.println("""
+
+        do {
+            System.out.println("""
                 1: Sort by region
                 2: Sort by age
-                3: Sort by death""");
+                3: Sort by death
+                9: Exit sorting program""");
 
-        userInput = input.nextInt();
-        switch (userInput){
-            case 1:
-                regionSort();
-                break;
-            case 2:
-                alderSort();
-                break;
-            case 3:
-                indlagteSort();
-                break;
+            userInput = input.nextInt();
+            switch (userInput){
+                case 1:
+                    regionSort();
+                    break;
+                case 2:
+                    alderSort();
+                    break;
+                case 3:
+                    indlagteSort();
+                    break;
+            }
 
+        }while(userInput != 9);
 
-        }
     }
 
 
