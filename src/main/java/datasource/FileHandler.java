@@ -1,6 +1,5 @@
 package datasource;
 
-import comparators.RegionComparator;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +19,7 @@ public class FileHandler {
 
     public void fileHandler() {
 
-        File file = new File("11_noegletal_pr_region_pr_aldersgruppe.csv");
+        File file = new File("COVID_KPI_REGION_AGE_GROUP.csv");
 
         try (Scanner input = new Scanner(file, StandardCharsets.ISO_8859_1)) {
             //
